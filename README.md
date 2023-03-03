@@ -30,7 +30,7 @@
 
 # 📖 Bookstore<a name="about-project"></a>
 
-**Bookstore** Is a application built with react.
+**Bookstore** Is a application built with react.It allows users to add,view and delete books from the bookstore.
 
 ## 🛠 Built With <a name="built-with"></a>
 
