@@ -1,45 +1,169 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  width: max-content;
+  border: none;
+  text-transform: capitalize;
+  background: transparent;
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.btn-primary {
+  background-color: var(--azure);
+  color: var(--clr-white-two);
+  padding: 0.801rem 1.188rem 0.886rem 1.375rem;
+  font-size: 0.801rem;
 }
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.status-btn {
+  margin: auto;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.single-book {
+  display: grid;
+  grid-template-columns: 4fr 3fr 3fr;
+  margin: 0.45rem 0;
+  background: var(--clr-white-two);
+  padding: 1.6rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.card,
+.card-body {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
-.card {
-  padding: 2em;
+.card h5 {
+  margin: 0;
+  color: grey;
+  font-weight: bold;
+  text-align: left;
 }
 
-.read-the-docs {
+.card-body h4,
+.card-body p {
+  margin: 0.25rem 0;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.card-body p {
+  color: #4386bf;
+  font-size: 0.875rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.6rem;
+  width: 10rem;
+}
+
+.card-footer button {
+  color: #4386bf;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.progress-bar {
+  border-radius: 50%;
+  border-top: 5px solid var(--medium-blue);
+  border-right: 5px solid var(--medium-blue);
+  border-bottom: 5px solid var(--medium-blue);
+  border-left: 5px solid #e8e8e8;
+  width: 4.25rem;
+  height: 4.25rem;
+}
+
+.progress-info {
+  margin: 0.4rem;
+}
+
+.progress-info h4 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.progress-info p {
+  font-size: 0.875rem;
+  color: #121212;
+  text-transform: capitalize;
+}
+
+.chapter p {
+  font-family: RobotoSlab, sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  margin: 0 0.2rem;
+  text-align: left;
+}
+
+.chapter :first-child {
+  color: #121212;
+}
+
+.chapter button {
+  letter-spacing: 0.5px;
+  font-size: 0.813rem;
+  margin-top: 1rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  color: #fff;
+}
+
+.form-title {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: left;
   color: #888;
+}
+
+.form-control {
+  display: grid;
+  grid-template-columns: 5.5fr 2.5fr 2fr;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.form-control button {
+  padding: 0.801rem 1.188rem 0.886rem 1.375rem;
+  border-radius: 3px;
+  width: 100%;
+}
+
+select {
+  appearance: none;
+  background-image: url('./assets/icons8-down-16.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 2rem;
+}
+
+.form-control select {
+  height: 2.813rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: var(--clr-white-two);
+}
+
+.form-control .form-input {
+  height: 2.813rem;
+  border-radius: 4px;
+  border: solid 1px var(--clr-background);
+  background-color: var(--clr-white-two);
+}
+
+.error-btn {
+  margin: auto;
 }
