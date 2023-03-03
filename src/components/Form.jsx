@@ -4,12 +4,8 @@ const Form = () => (
     <div className="form-control">
       <input type="text" placeholder="Book title" className="form-input" />
 
-      <select
-        name="category"
-        id="category"
-        placeholder="category"
-        aria-label="select"
-      />
+      <input type="text" placeholder="Author" className="form-input" />
+
       <button type="submit" className="btn btn-primary">
         ADD BOOK
       </button>
