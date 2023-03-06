@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
-import { checkStatus } from '../redux/categories/categories';
 
 const Book = ({
   title, author, category, item_id: itemId,
@@ -19,12 +18,8 @@ const Book = ({
           <p>{author}</p>
         </div>
         <div className="card-footer">
-          <button
-            type="button"
-            className="btn"
-            onClick={() => dispatch(checkStatus())}
-          >
-            Check Status
+          <button type="button" className="btn">
+            Comments
           </button>
           <button
             type="button"
