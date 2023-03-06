@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addBook } from '../redux/books/books';
 
 const Form = () => {
@@ -7,8 +7,10 @@ const Form = () => {
     title: '',
     author: '',
     item_id: '',
+    category: 'Action',
   });
   const dispatch = useDispatch();
+  const { categories } = useSelector((store) => store.categories);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!inputData.title || !inputData.author) return;
@@ -19,6 +21,7 @@ const Form = () => {
       title: '',
       author: '',
       item_id: '',
+      category: 'Action',
     });
   };
   const handleChange = (e) => {
@@ -45,7 +48,19 @@ const Form = () => {
           value={inputData.author}
           onChange={(e) => handleChange(e)}
         />
-
+        <select
+          name="category"
+          id="category"
+          className="form-input"
+          value={inputData.category}
+          onChange={(e) => handleChange(e)}
+        >
+          {categories.map((cat) => (
+            <option value={cat} key={cat}>
+              {cat}
+            </option>
+          ))}
+        </select>
         <button type="submit" className="btn btn-primary">
           ADD BOOK
         </button>

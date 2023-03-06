@@ -1,7 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  categories: [],
+  categories: [
+    'Fantasy',
+    'Sci-Fi',
+    'Mystery',
+    'Thriller',
+    'Romance',
+    'Westerns',
+    'Dystopian',
+    'Contemporary',
+    'Action',
+  ],
 };
 
 const categoriesSlice = createSlice({
