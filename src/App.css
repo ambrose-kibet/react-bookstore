@@ -16,6 +16,13 @@
   font-size: 0.801rem;
 }
 
+.btn-primary :hover {
+  color: var(--azure);
+  background-color: var(--clr-white-two);
+  font-weight: bold;
+  transition: var(--transition);
+}
+
 .status-btn {
   margin: auto;
 }
