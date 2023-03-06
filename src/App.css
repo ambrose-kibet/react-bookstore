@@ -145,6 +145,10 @@ select {
   padding-right: 2rem;
 }
 
+.form {
+  padding-bottom: 2rem;
+}
+
 .form-control select {
   height: 2.813rem;
   border-radius: 4px;

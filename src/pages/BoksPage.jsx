@@ -1,9 +1,16 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Book from '../components/Book';
 import Form from '../components/Form';
+import { getBooks } from '../redux/books/books';
 
 const BoksPage = () => {
   const { books } = useSelector((store) => store.books);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getBooks());
+  }, [dispatch]);
+
   return (
     <section className="section-container">
       {books.map((book) => (

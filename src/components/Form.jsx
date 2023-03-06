@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { addBook, getBooks } from '../redux/books/books';
 
 const Form = () => {
   const [inputData, setInputData] = useState({
@@ -11,19 +11,21 @@ const Form = () => {
   });
   const dispatch = useDispatch();
   const { categories } = useSelector((store) => store.categories);
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!inputData.title || !inputData.author) return;
     const tempId = new Date().getTime();
     inputData.item_id = tempId.toString();
-    dispatch(addBook(inputData));
+    await dispatch(addBook(inputData));
     setInputData({
       title: '',
       author: '',
       item_id: '',
       category: 'Action',
     });
+    await dispatch(getBooks());
   };
+
   const handleChange = (e) => {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
   };

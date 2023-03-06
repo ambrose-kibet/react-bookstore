@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import bookData from '../../data';
-
+import axios from 'axios';
 const url =
   'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/w3Mw9PJvOL6DhMbpbOS8/books';
 const initialState = {
-  books: [...bookData],
+  books: [],
 };
 
 export const addBook = createAsyncThunk(
@@ -18,10 +18,21 @@ export const addBook = createAsyncThunk(
   }
 );
 export const getBooks = createAsyncThunk(
-  'books/addBook',
+  'books/getBook',
   async (_, thunkAPI) => {
     try {
       const { data } = await axios(url);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.msg);
+    }
+  }
+);
+export const deleteBooks = createAsyncThunk(
+  'books/deleteBook',
+  async (id, thunkAPI) => {
+    try {
+      const { data } = await axios.delete(url + `/${id}`);
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.msg);
     }
@@ -38,7 +49,16 @@ const booksSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getBooks.fulfilled, (state, { payload }) => {
-      state.books = payload;
+      const booklist = [];
+
+      for (const key in payload) {
+        let newOBJ = {};
+        newOBJ['item_id'] = key;
+        newOBJ = { ...newOBJ, ...payload[key][0] };
+        booklist.push(newOBJ);
+      }
+
+      state.books = booklist;
     });
   },
 });
