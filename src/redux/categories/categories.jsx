@@ -1,14 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  categories: [],
+  categories: [
+    'Fantasy',
+    'Sci-Fi',
+    'Mystery',
+    'Thriller',
+    'Romance',
+    'Westerns',
+    'Dystopian',
+    'Contemporary',
+    'Action',
+  ],
 };
 
 const categoriesSlice = createSlice({
   name: 'categories',
   initialState,
   reducers: {
-    checkStatus: () => 'Under construction',
+    checkStatus: () => ({ ...initialState, status: 'Under construction' }),
   },
 });
 
