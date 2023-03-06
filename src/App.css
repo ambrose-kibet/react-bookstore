@@ -16,6 +16,15 @@
   font-size: 0.801rem;
 }
 
+.btn-primary:hover {
+  color: var(--azure);
+  background-color: var(--clr-white-two);
+  border: 1pt solid var(--azure);
+  font-weight: bold;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
 .status-btn {
   margin: auto;
 }
