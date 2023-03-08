@@ -68,7 +68,7 @@ To get this repository to your desired folder:
 
 ```sh
   cd my-folder
-  gitclone https://github.com/ambrose-kibet/react-bookstore.git
+  git clone https://github.com/ambrose-kibet/react-bookstore.git
 ```
 
 ### Running the app
